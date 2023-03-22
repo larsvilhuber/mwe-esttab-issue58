@@ -42,7 +42,16 @@ My suspicion is that something related to the LaTeX processing of `esttab` is "s
 
 ## MWE
 
-See [mwe-esttab-issue58.do](mwe-esttab-issue58.do).
+See [mwe-esttab-issue58.do](mwe-esttab-issue58.do). In order to run it:
+
+- On Linux/Mac: cd into the working directory, run 
+
+```
+stata=stata-mp  # adjust for your system
+$stata do mwe-esttab-issue58.do
+``` 
+
+- On Windows: use right-click, choose `Execute (do)` (see [pictures](https://labordynamicsinstitute.github.io/ldilab-manual/96-02-running-stata-code.html#step-6-run-the-code-tabset)). No need to edit anything.
 
 ## Logs
 
