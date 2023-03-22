@@ -51,7 +51,7 @@ stata=stata-mp  # adjust for your system
 $stata do mwe-esttab-issue58.do
 ``` 
 
-- On Windows: use right-click, choose `Execute (do)` (see [pictures](https://labordynamicsinstitute.github.io/ldilab-manual/96-02-running-stata-code.html#step-6-run-the-code-tabset)). No need to edit anything.
+- On Windows 10: use right-click, choose `Execute (do)` (see [pictures](https://labordynamicsinstitute.github.io/ldilab-manual/96-02-running-stata-code.html#step-6-run-the-code)). No need to edit anything. (On Windows 11, you need to select the 
 
 ## Logs
 
