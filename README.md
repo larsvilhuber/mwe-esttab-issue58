@@ -48,4 +48,6 @@ See [mwe-esttab-issue58.do](mwe-esttab-issue58.do).
 
 - Run using a Linux Docker: [logs/logfile_22_Mar_2023-13_43_26-statauser.log](logs/logfile_22_Mar_2023-13_43_26-statauser.log) [WORKS]
 - Run on Windows with regular drive letters: [logs/logfile_22_Mar_2023-09_50_43-lars.log](logs/logfile_22_Mar_2023-09_50_43-lars) [WORKS]
-- Run on Windows with network paths:
+- Run on Windows with network paths: [logs/logfile_22_Mar_2023-09_55_51-lv39_RS.log](logs/logfile_22_Mar_2023-09_55_51-lv39_RS.log) [BREAKS]
+
+

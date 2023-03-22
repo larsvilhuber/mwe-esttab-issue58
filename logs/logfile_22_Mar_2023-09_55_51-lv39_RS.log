@@ -1,0 +1,89 @@
+--------------------------------------------------------------------------------
+      name:  ldi
+       log:  \\rschfs1x\userRS\K-Q\lv39_RS\Documents\Workspace\mwe-esttab-issue5
+> 8/logs/logfile_22_Mar_2023-09_55_51-lv39_RS.log
+  log type:  text
+ opened on:  22 Mar 2023, 09:55:51
+
+. 
+. /* It will provide some info about how and when the program was run */
+. 
+. /* install any packages locally */
+. di "=== Redirecting where Stata searches for ado files ==="
+=== Redirecting where Stata searches for ado files ===
+
+. capture mkdir "$rootdir/ado"
+
+. sysdir set PERSONAL "$rootdir/ado/personal"
+
+. sysdir set PLUS     "$rootdir/ado/plus"
+
+. sysdir set SITE     "$rootdir/ado/site"
+
+. 
+. /* get estout */
+. 
+. ssc install estout
+checking estout consistency and verifying not already installed...
+installing into \\rschfs1x\userRS\K-Q\lv39_RS\Documents\Workspace\mwe-esttab-iss
+> ue58/ado/plus\...
+installation complete.
+
+. which estout
+\\rschfs1x\userRS\K-Q\lv39_RS\Documents\Workspace\mwe-esttab-issue58/ado/plus\e\
+> estout.ado
+*! version 3.31  26apr2022  Ben Jann
+
+. 
+. /// now set up the problem 
+> /// for purpose of discussing this on Unix, use a sub-directory 
+> 
+. cap mkdir "$rootdir/tables"
+
+. cap mkdir "$rootdir/data"
+
+. cd data
+\\rschfs1x\userRS\K-Q\lv39_RS\Documents\Workspace\mwe-esttab-issue58\data
+
+. 
+. sysuse auto
+(1978 automobile data)
+
+. 
+. quietly regress price mpg weight
+
+. estadd scalar p_diff = r(p)
+
+added scalar:
+             e(p_diff) =  .
+
+. estout, stats(p_diff)
+
+-------------------------
+                        .
+                        b
+-------------------------
+mpg             -49.51222
+weight           1.746559
+_cons            1946.069
+-------------------------
+p_diff                  .
+-------------------------
+
+. esttab using "$rootdir/tables/test.tex"
+file
+    \rschfs1x\userRS\K-Q\lv39_RS\Documents\Workspace\mwe-esttab-issue58/tables
+    > /test.tex could not be opened
+r(603);
+
+end of do-file
+
+r(603);
+
+. log close ldi
+      name:  ldi
+       log:  \\rschfs1x\userRS\K-Q\lv39_RS\Documents\Workspace\mwe-esttab-issue5
+> 8/logs/logfile_22_Mar_2023-09_55_51-lv39_RS.log
+  log type:  text
+ closed on:  22 Mar 2023, 09:56:04
+--------------------------------------------------------------------------------
