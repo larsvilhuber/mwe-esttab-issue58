@@ -32,7 +32,10 @@ sysdir set SITE     "$rootdir/ado/site"
 
 /* get estout */
 
-ssc install estout
+// ssc install estout
+
+net install estout, replace from(https://raw.githubusercontent.com/benjann/estout/master/)
+
 which estout
 
 /// now set up the problem 
